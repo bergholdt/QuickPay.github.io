@@ -1,0 +1,45 @@
+<div class="tab-pane" id="checksum-example-dotnet">
+{% highlight csharp linenos %}
+private string Sign(Dictionary<string, string> params, string api_key) {
+    var result = String.Join(" ", params.OrderBy(c => c.Key).Select(c => c.Value).ToArray());
+    var e = Encoding.UTF8;
+    var hmac = new HMACSHA256(e.GetBytes(api_key));
+    byte[] b = hmac.ComputeHash(e.GetBytes(result));
+    var s = new StringBuilder();
+    for (int i = 0; i < b.Length; i++)
+    {
+        s.Append(b[i].ToString("x2"));
+    }
+    return s.ToString();
+}
+
+public ActionResult QuickPay() {
+    var params = new Dictionary<string, string>();
+    params.Add("version", "v10");
+    params.Add("merchant_id", "1");
+    params.Add("agreement_id", "1");
+    params.Add("order_id", "0001");
+    params.Add("amount", "100");
+    params.Add("currency", "DKK");
+    params.Add("continueurl", "http://shop.domain.tld/continue");
+    params.Add("cancelurl", "http://shop.domain.tld/cancel");
+    params.Add("callbackurl", "http://shop.domain.tld/callback");
+    params.Add("language", "da");
+    params.Add("autocapture", "1");
+
+    ViewBag.Language = language;
+    ViewBag.Autocapture = autocapture;
+    ViewBag.OrderId = orderId;
+    ViewBag.MerchantId = merchantId;
+    ViewBag.AgreementId = agreementId;
+    ViewBag.Amount = amount;
+    ViewBag.Currency = currency;
+    ViewBag.ContinueUrl = continueUrl;
+    ViewBag.CancelUrl = cancelUrl;
+    ViewBag.CallbackUrl = callbackUrl;
+    ViewBag.Checksum = Sign(params, "your_secret_agreement_api_key");
+
+    return View();
+}
+{% endhighlight %}
+</div>

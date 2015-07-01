@@ -1,0 +1,26 @@
+<div class="tab-pane" id="checksum-example-php">
+{% highlight php linenos %}
+<?php
+function sign($params, $api_key) {
+  ksort($params);
+  $base = implode(" ", $params);
+
+  return hash_hmac("sha256", $base, $api_key);
+}
+
+$params = array(
+  "version"      => "v10",
+  "merchant_id"  => 1,
+  "agreement_id" => 1,
+  "order_id"     => "0001",
+  "amount"       => 100,
+  "currency"     => "DKK",
+  "continueurl" => "http://shop.domain.tld/continue",
+  "cancelurl"   => "http://shop.domain.tld/cancel",
+  "callbackurl" => "http://shop.domain.tld/callback"
+);
+
+$params["checksum"] = sign($params, "your_secret_agreement_api_key");
+?>
+{% endhighlight %}
+</div>

@@ -1,0 +1,18 @@
+<div class="tab-pane active" id="link-example-ruby">
+{% highlight ruby linenos %}
+# Use the official quickpay-ruby-client gem
+require "quickpay/api/client"
+client = QuickPay::API::Client.new(api_key: ENV['YOUR_API_USER_KEY'])
+
+payment = client.post("/payments",
+  :order_id => "0001",
+  :currency => "DKK"
+)
+
+link = client.put("/payments/#{payment['id']}/link",
+  :amount => 100
+)
+
+puts link['url']
+{% endhighlight %}
+</div>

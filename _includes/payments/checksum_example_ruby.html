@@ -1,0 +1,26 @@
+<div class="tab-pane active" id="checksum-example-ruby">
+{% highlight ruby linenos %}
+require "digest/hmac"
+
+def sign(params, api_key)
+  values = params.sort.map { |_, value| value }
+  base = values.join(' ')
+
+  Digest::HMAC.hexdigest(base, api_key, Digest::SHA256)
+end
+
+params = {
+  :version      => "v10",
+  :merchant_id  => 1,
+  :agreement_id => 1,
+  :order_id     => "0001",
+  :amount       => 100,
+  :currency     => "DKK",
+  :continueurl => "http://shop.domain.tld/continue",
+  :cancelurl   => "http://shop.domain.tld/cancel",
+  :callbackurl => "http://shop.domain.tld/callback"
+}
+
+params[:checksum] = sign(params, "your_secret_agreement_api_key")
+{% endhighlight %}
+</div>

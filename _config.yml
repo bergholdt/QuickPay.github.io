@@ -1,0 +1,15 @@
+# Site settings
+title: QuickPay Technical Documentation
+email: support@quickpay.net
+description: > # this means to ignore newlines until "baseurl:"
+  QuickPay Technical Documentation
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://tech.quickpay.net" # the base hostname & protocol for your site
+twitter_username: QuickPayPSP
+github_username:  QuickPay
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM

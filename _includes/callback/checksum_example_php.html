@@ -1,0 +1,19 @@
+<div class="tab-pane" id="checksum-example-php">
+{% highlight php linenos %}
+<?php
+function sign($base, $private_key) {
+  return hash_hmac("sha256", $base, $private_key);
+}
+
+$request_body = file_get_contents("php://input");
+$checksum     = sign($request_body, "your_account_private_key");
+
+if ($checksum == $_SERVER["HTTP_QUICKPAY_CHECKSUM_SHA256"]) {
+  // Request is authenticated
+} else {
+  // Request is NOT authenticated
+}
+
+?>
+{% endhighlight %}
+</div>

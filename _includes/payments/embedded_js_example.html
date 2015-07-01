@@ -1,0 +1,72 @@
+{% highlight html linenos %}
+<form id="checkout-form" class="form-horizontal" action="/shop/pay" method="post">
+  <label for="name">Name</label>
+  <input type="text" name="name" value="">
+
+  <label for="address">Address</label>
+  <input type="text" name="address" value="">
+
+  <label for="zipcode">Zipcode</label>
+  <input type="text" name="zipcode" value="">
+
+  <labe for="city">City</label>
+  <input type="text" name="city" value="">
+
+  <label>Card number</label>
+  <div class="card">
+    <div class="card-brand"></div>
+    <input type="text" autocomplete="off" data-quickpay="cardnumber">
+  </div>
+
+  <label>Expiration</label>
+  <input type="text" placeholder="MM / YY" autocomplete="off" data-quickpay="expiration">
+
+  <label>CVV/CVD</label>
+  <input type="text" maxlength="4" autocomplete="off" data-quickpay="cvd">
+
+  <button class="btn btn-primary" type="submit">Pay</button>
+</form>
+
+<style type="text/css">
+  .card {
+    position: relative;
+  }
+
+  .card-brand {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-weight: bold;
+  }
+
+  input.error {
+    border: 1px solid red;
+  }
+</style>
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://payment.quickpay.net/embedded/v1/quickpay.js"></script>
+<script type="text/javascript">
+  QuickPay.Embedded.Form($('#checkout-form'), {
+    merchant_id: 1234,
+    agreement_id: 1234,
+    brandChanged: function(brand) {
+      $('.card-brand').html(brand);
+    },
+    beforeCreateToken: function(form) {
+      $('input.error').removeClass('error');
+      $('#checkout-form button').html('Please wait...');
+    },
+    failure: function(form, source, message) {
+      if (source === 'validation') {
+        for (var i = 0; i < message.length; i++) {
+          $('input[data-quickpay=' + message[i] + ']').addClass('error');
+        }
+      } else {
+        alert(source + ': ' + message);
+      }
+      $('#checkout-form button').html('Pay');
+    }
+  });
+</script>
+{% endhighlight %}

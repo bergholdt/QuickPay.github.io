@@ -1,0 +1,26 @@
+<div class="tab-pane" id="checksum-example-python">
+{% highlight python linenos %}
+import hmac, hashlib
+
+def sign(params, api_key):
+  items = sorted(params.items(), key=lambda x: x[0])
+  base = ' '.join([ str(pair[1]) for pair in items])
+  
+  return hmac.new(api_key, base, hashlib.sha256).hexdigest()
+
+params = dict(
+ version      = "v10",
+ merchant_id  = 1,
+ agreement_id = 1,
+ order_id     = "0001",
+ amount       = 100,
+ currency     = "DKK",
+ continueurl = "http://shop.domain.tld/continue",
+ cancelurl   = "http://shop.domain.tld/cancel",
+ callbackurl = "http://shop.domain.tld/callback"
+)
+
+params['checksum'] = sign(params, "your_secret_agreement_api_key")
+
+{% endhighlight %}
+</div>

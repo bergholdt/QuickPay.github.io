@@ -1,0 +1,19 @@
+<div class="tab-pane active" id="checksum-example-ruby">
+{% highlight ruby linenos %}
+require "digest/hmac"
+
+def sign(base, private_key)
+  Digest::HMAC.hexdigest(base, private_key, Digest::SHA256)
+end
+
+# Assuming that you are using Rack - https://github.com/rack/rack
+request_body = env["rack.input"].read
+checksum     = sign(request_body, "your_account_private_key")
+
+if checksum == env["HTTP_QUICKPAY_CHECKSUM_SHA256"]
+  # Request is authenticated
+else
+  # Request is NOT authenticated
+end
+{% endhighlight %}
+</div>

@@ -1,0 +1,60 @@
+<div class="tab-pane active" id="backend-example-ruby-sinatra">
+{% highlight ruby linenos %}
+require 'sinatra/base'
+require 'quickpay/api/client' # Find the QuickPay Ruby client at http://tech.quickpay.net/opensource
+
+class App < Sinatra::Base
+  enable :sessions
+
+  post '/shop/pay' do
+    order = Order.new(
+      name:    params[:name],
+      address: params[:address],
+      zipcode: params[:zipcode],
+      city:    params[:city]
+    )
+
+    order.save!
+
+    # See http://tech.quickpay.net/api/services
+    client = QuickPay::API::Client.new(api_key: ENV['QUICKPAY_API_KEY'])
+    token  = params[:card_token]
+
+    payment = client.post('/payments', {
+      order_id: order.order_id, # MUST be unique
+      currency: 'EUR'
+    })
+
+    order.payment_id = payment['id']
+    order.save!
+
+    payment = client.post("/payments/#{order.payment_id}/authorize?synchronized", {
+      amount: 12345, # 123.45
+      card: { token: token }
+    })
+
+    if payment['approved']
+      order.authorized = true
+    end
+
+    order.qp_status_code = payment['operations'].last['qp_status_code']
+    order.qp_status_msg  = payment['operations'].last['qp_status_msg']
+    order.aq_status_code = payment['operations'].last['aq_status_code']
+    order.aq_status_msg  = payment['operations'].last['aq_status_msg']
+    order.save!
+
+    if order.authorized?
+      session[:order_id] = order.id
+      redirect to('/shop/receipt')
+    else
+      erb :error
+    end
+  end
+
+  get '/shop/receipt' do
+    @order = Order.find(session[:order_id])
+    erb :receipt
+  end
+end
+{% endhighlight %}
+</div>

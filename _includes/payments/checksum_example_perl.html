@@ -1,0 +1,26 @@
+<div class="tab-pane" id="checksum-example-perl">
+{% highlight perl linenos %}
+use Digest::SHA qw(hmac_sha256_hex);
+
+sub sign {
+    my ($params, $api_key) = @_;
+    my $base = join " ", @$params{ sort keys %$params };
+
+    hmac_sha256_hex($base, $api_key);
+}
+
+my $params = {
+    version      => "v10",
+    merchant_id  => 1,
+    agreement_id => 1,
+    order_id     => "0001",
+    amount       => 100,
+    currency     => "DKK",
+    continueurl => "http://shop.domain.tld/continue",
+    cancelurl   => "http://shop.domain.tld/cancel",
+    callbackurl => "http://shop.domain.tld/callback"
+};
+
+$params->{checksum} = sign($params, "your_secret_agreement_api_key");
+{% endhighlight %}
+</div>
