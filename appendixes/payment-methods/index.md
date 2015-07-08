@@ -11,8 +11,8 @@ The syntax is `[3d-]{brand}[-{ISO 3166-1 alpha-2}]` - example:
 
 ```
 3d-mastercard-dk
-^      ^       ^
-|      |       |__ Issuing country as ISO 3166-1 alpha-2 (ie. the country where a credit card was issued)
+^      ^      ^
+|      |      |___ Issuing country as ISO 3166-1 alpha-2 (ie. the country where a credit card was issued)
 |      |__________ The Brand (Visa, Mastercard, Viabill etc.)
 |_________________ Security Level (3D-secure or std. SSL)
 
@@ -92,6 +92,12 @@ It is also possible to use negation with payment methods. If you do not want to 
       <td>jcb</td>
       <td>JCB credit card</td>
       <td>3D</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>maestro</td>
+      <td>Maestro debit card</td>
+      <td>3D (only)</td>
       <td>Yes</td>
     </tr>
     <tr>
