@@ -7,7 +7,7 @@ title: Opensource - QuickPay projects
 
 If you are anything like us, the first thing you do is to poke around in the source code of the software that you are about to use.
 
-Should a question arise while you are surfing the source, or are you just curious about some technical tidbits? Join our #tech-talk slack-channel!
+Should a question arise while you are surfing the source, or are you just curious about some technical tidbits? Join our #tech-talk slack-channel (Danish/English)!
 
 <p class="text-center"><a class="btn btn-info" href="mailto:support@quickpay.net?subject=Invite for #tech-talk&amp;body=Hello%0D%0A%0D%0APlease send an invite to this e-mail address: <YOUR EMAIL>">Request invite</a></p>
 
