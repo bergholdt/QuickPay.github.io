@@ -17,7 +17,7 @@ We use [GitHub](https://github.com/QuickPay) to manage our projects - you are mo
 
 ### Documentation
 
-The is our administration documentation (this site). It uses Jekyll and it served by GitHub Pages ([Source](https://github.com/QuickPay/QuickPay.github.io) and [Issues](https://github.com/QuickPay/QuickPay.github.io/issues)).
+This is our technical documentation (this site). It uses Jekyll and it served by GitHub Pages ([Source](https://github.com/QuickPay/QuickPay.github.io) and [Issues](https://github.com/QuickPay/QuickPay.github.io/issues)).
 
 ### Manager
 
