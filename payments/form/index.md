@@ -146,6 +146,12 @@ The Payment Window is in reality just an API-client hosted in a PCI Level 1 cert
       <td>Custom variables set on the created payment. Submit them as nested params: <code>variables[myvar]=somevalue</code></td>
     </tr>
     <tr>
+      <td></td>
+      <td>deadline</td>
+      <td><code>/^\d+$/</code></td>
+      <td>Deadline in seconds for the cardholder to complete the order. If deadline is reached, cardholder will be taken to cancelurl and a callback is sent. The operation type of the callback is <code>deadline</code></td>
+    </tr>
+    <tr>
       <td><span class="label label-danger">R</span></td>
       <td>checksum</td>
       <td><code>/^[a-z0-9]{64}$/</code></td>
