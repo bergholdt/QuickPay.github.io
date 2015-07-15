@@ -1,6 +1,7 @@
 ---
 layout: default
 title: QuickPay Form
+redirect_from: "/payments/hosted/"
 ---
 
 # QuickPay Form
