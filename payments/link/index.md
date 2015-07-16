@@ -5,7 +5,7 @@ title: QuickPay Link - Open payment window using a link
 
 # QuickPay Link
 
-The QuickPay Link feature enables you to generate an URL that - when activated - will open a payment window. This is the prefered way of accepting payment in our hosted enviroment as it gives a number of benefits - most notably:
+The QuickPay Link feature enables you to generate an URL that - when activated - will open a payment window. This is the prefered way of accepting payment in our hosted environment as it gives a number of benefits - most notably:
 
 * Abandoned orders recovery - resume payments when the purchaser left off
 * E-mail channel payments
