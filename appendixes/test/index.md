@@ -10,7 +10,7 @@ QuickPay implements a system for testing payments in your shop. A test payment i
 
 ### Credit card test numbers
 
-Use these numbers to invoke a certain response.
+Use these numbers to invoke a certain response. You may use a random expiration date and CVD - (as long as they "seem" valid).
 
 <table class="table table-striped">
   <thead>
