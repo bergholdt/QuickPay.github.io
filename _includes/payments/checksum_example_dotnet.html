@@ -37,7 +37,7 @@ public ActionResult QuickPay() {
     ViewBag.ContinueUrl = continueUrl;
     ViewBag.CancelUrl = cancelUrl;
     ViewBag.CallbackUrl = callbackUrl;
-    ViewBag.Checksum = Sign(params, "your_secret_agreement_api_key");
+    ViewBag.Checksum = Sign(params, "your_secret_payment_window_api_key");
 
     return View();
 }
