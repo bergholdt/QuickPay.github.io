@@ -1,7 +1,7 @@
 <div class="tab-pane" id="checksum-example-dotnet">
 {% highlight csharp linenos %}
-string checkSum = Request.Headers["QuickPay-Checksum-SHA256"];
-        
+string checkSum = Request.Headers["QuickPay-Checksum-Sha256"];
+
 var bytes = new byte[Request.InputStream.Length];
 Request.InputStream.Read(bytes, 0, bytes.Length);
 Request.InputStream.Position = 0;
