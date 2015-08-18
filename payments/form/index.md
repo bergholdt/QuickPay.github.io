@@ -153,6 +153,12 @@ The Payment Window is in reality just an API-client hosted in a PCI Level 1 cert
       <td>Deadline in seconds for the cardholder to complete the order. If deadline is reached, cardholder will be taken to cancelurl and a callback is sent. The operation type of the callback is <code>deadline</code></td>
     </tr>
     <tr>
+      <td></td>
+      <td>text_on_statement</td>
+      <td></td>
+      <td>Text that will be placed on cardholder’s bank statement.</td>
+    </tr>
+    <tr>
       <td><span class="label label-danger">R</span></td>
       <td>checksum</td>
       <td><code>/^[a-z0-9]{64}$/</code></td>
