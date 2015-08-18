@@ -156,7 +156,7 @@ The Payment Window is in reality just an API-client hosted in a PCI Level 1 cert
       <td></td>
       <td>text_on_statement</td>
       <td></td>
-      <td>Text that will be placed on cardholder’s bank statement.</td>
+      <td>Text that will be placed on cardholder’s bank statement (currently only supported by Clearhaus).</td>
     </tr>
     <tr>
       <td><span class="label label-danger">R</span></td>
