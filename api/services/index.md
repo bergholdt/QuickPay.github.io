@@ -37,6 +37,8 @@ $ curl -v -su '' -H 'Accept-Version: v10' https://api.quickpay.net/ping
 Enter host password for user '': <enter your api key here>
 ```
 
+As a more GUI-oriented alternative is using the webservice [Postman](https://www.youtube.com/watch?v=liZe3f-5668).
+
 <div id="quickpay-swagger"></div>
 
 <script type="x-tmpl-mustache" id="quickpay-swagger-template">
