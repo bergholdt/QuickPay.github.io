@@ -159,6 +159,36 @@ The Payment Window is in reality just an API-client hosted in a PCI Level 1 cert
       <td>Text that will be placed on cardholder’s bank statement (currently only supported by Clearhaus).</td>
     </tr>
     <tr>
+      <td></td>
+      <td>vat_amount</td>
+      <td><code>/^[0-9]{1,9}$/</code></td>
+      <td>Amount of VAT included in <code>amount</code> (Required for Paii)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>category</td>
+      <td></td>
+      <td>Paii category code (Required for Paii)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>reference_title</td>
+      <td></td>
+      <td>Paii reference title (Required for Paii)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>product_id</td>
+      <td></td>
+      <td>Paii product ID (Required for Paii)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>customer_email</td>
+      <td></td>
+      <td>Customer email address (Required for PayPal credit-card payments)</td>
+    </tr>
+    <tr>
       <td><span class="label label-danger">R</span></td>
       <td>checksum</td>
       <td><code>/^[a-z0-9]{64}$/</code></td>
