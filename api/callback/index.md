@@ -44,7 +44,7 @@ The request headers contains some important information.
       <td>API version of the callback-generating request</td>
     </tr>
     <tr>
-      <td>QuickPay-Checksum-SHA256</td>
+      <td>QuickPay-Checksum-Sha256</td>
       <td>Checksum of the entire raw callback request body - using <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a> with <a href="http://en.wikipedia.org/wiki/SHA-2">SHA256</a> as the cryptographic hash function. The checksum is signed using the Account's private key. We strongly recommend that you validate the checksum to ensure that the request is authentic.</td>
     </tr>
   </tbody>
@@ -72,7 +72,7 @@ Accept-Encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3
 Accept: */*
 User-Agent: Ruby
 Content-Type: application/json
-QuickPay-Checksum-SHA256: e96f696596c38df228901a6f69f995ad1e917d7b64025f1f0e997a1080b2a35d
+QuickPay-Checksum-Sha256: e96f696596c38df228901a6f69f995ad1e917d7b64025f1f0e997a1080b2a35d
 QuickPay-Resource-Type: Payment
 QuickPay-Account-ID: 7
 QuickPay-API-Version: v10
