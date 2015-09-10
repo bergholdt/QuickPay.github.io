@@ -30,7 +30,7 @@ Our API clients makes it easier to get started talking to our API using your fav
 * PHP client ([Source](https://github.com/QuickPay/quickpay-php-client) and [Issues](https://github.com/QuickPay/quickpay-php-client/issues))
 * Ruby client ([Source](https://github.com/QuickPay/quickpay-ruby-client) and [Issues](https://github.com/QuickPay/quickpay-ruby-client/issues))
 * Python client ([Source](https://github.com/QuickPay/quickpay-python-client) and [Issues](https://github.com/QuickPay/quickpay-python-client/issues))
-* .Net client ([Source](https://github.com/QuickPay/quickpay-dotnet-client), [Issues](https://github.com/QuickPay/quickpay-dotnet-client/issues) and [nuget](https://www.nuget.org/packages/QuickPay.API.Client/1.0.0))
+* .Net client ([Source](https://github.com/QuickPay/quickpay-dotnet-client), [Issues](https://github.com/QuickPay/quickpay-dotnet-client/issues) and [NuGet](https://www.nuget.org/packages/QuickPay.API.Client/1.0.0))
 
 **Note**: If you miss you favorite programming language in the list above - Please [let us know](https://quickpay.net/about)
 
