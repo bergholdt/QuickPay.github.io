@@ -84,7 +84,7 @@ The Payment Window is in reality just an API-client hosted in a PCI Level 1 cert
       <td><span class="label label-warning">O</span></td>
       <td>type</td>
       <td><code>!^(payment|subscription)!</code></td>
-      <td>Type of transaction</td>
+      <td>Type of transaction. Defaults to payment</td>
     </tr>
     <tr>
       <td></td>
