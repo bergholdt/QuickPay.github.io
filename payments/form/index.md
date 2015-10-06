@@ -81,6 +81,12 @@ The Payment Window is in reality just an API-client hosted in a PCI Level 1 cert
       <td>QuickPay will make a call back to this URL with the result of the payment. Overwrites the default callback url.</td>
     </tr>
     <tr>
+      <td><span class="label label-warning">O</span></td>
+      <td>type</td>
+      <td><code>!^(payment|subscription)!</code></td>
+      <td>Type of transaction. Defaults to payment</td>
+    </tr>
+    <tr>
       <td></td>
       <td>language</td>
       <td><code>/^[a-z]{2}$/</code></td>
@@ -102,7 +108,7 @@ The Payment Window is in reality just an API-client hosted in a PCI Level 1 cert
       <td></td>
       <td>subscription</td>
       <td><code>/^[0-1]{1}$/</code></td>
-      <td>Create a subscription instead of a standard payment</td>
+      <td><b>DEPRECATED</b> Create a subscription instead of a standard payment. Overrides <code>type</code></td>
     </tr>
     <tr>
       <td><span class="label label-info">D</span></td>
