@@ -5,7 +5,7 @@ require "quickpay/api/client"
 client = QuickPay::API::Client.new(api_key: ENV['YOUR_API_USER_KEY'])
 
 card = client.post("/cards")
-link = client("/cards/#{card["id"]}/link")
+link = client.put("/cards/#{card["id"]}/link")
 
 puts link["url"] # Redirect your customer to this URL
 

@@ -9,7 +9,7 @@ payment = client.post("/payments",
   :order_id => "0001",
   :currency => "DKK"
 )
-authorize = client.post("/payments/#{order.payment_id}/authorize?synchronized", {
+authorize = client.post("/payments/#{payment['id']}/authorize?synchronized", {
   amount: 100,
   card: { token: tokens['token'] }
 })
