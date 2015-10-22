@@ -31,7 +31,7 @@ There is however a limit in terms of backward compability and at any time only t
 
 ### Access and Security
 
-Any and all communication is encrypted using a 4096 Bit SHA1 RSA certificate issued by Geotrust using the protocols TLS 1.0, 1.1 &amp; 1.2.
+Any and all communication is encrypted using a 4096 Bit SHA256 RSA certificate issued by Comodo using the protocols TLS 1.0, 1.1 &amp; 1.2.
 
 To interact with our API you will need to [create a user](https://manage.quickpay.net/#/login). With this user you can create multiple merchant accounts or be connected to existing merchant accounts.
 
