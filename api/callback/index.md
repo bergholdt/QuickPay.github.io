@@ -56,7 +56,8 @@ The request body contains the resource as it exists **after** the change - ie. i
 
 ### Response
 
-We expect a response http status code of `2xx` to the callback. Otherwise the callback is failed and will be retried after an hour.
+We expect a response http status code of `2xx`, `302` or `303` to the callback. Otherwise the callback is failed and will be retried after an hour.
+When http status in the response is `301` or `307` we redirect the callback to the url in the `Location` header.
 
 ### Order of callbacks
 
